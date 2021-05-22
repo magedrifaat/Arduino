@@ -80,8 +80,6 @@ import javax.swing.TransferHandler;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 import javax.swing.text.BadLocationException;
-import javax.swing.text.Document;
-import javax.swing.text.Element;
 
 import org.fife.ui.rsyntaxtextarea.folding.FoldManager;
 
@@ -97,7 +95,6 @@ import cc.arduino.view.StubMenuListener;
 import cc.arduino.view.findreplace.FindReplace;
 import jssc.SerialPortException;
 import processing.app.debug.RunnerException;
-import processing.app.debug.TargetBoard;
 import processing.app.forms.PasswordAuthorizationDialog;
 import processing.app.helpers.DocumentTextChangeListener;
 import processing.app.helpers.Keys;
@@ -1163,7 +1160,7 @@ public class Editor extends JFrame implements RunnerListener {
     menu.add(item);
 
     item = new JMenuItem(tr("Visit Arduino.cc"));
-    item.addActionListener(event -> Base.openURL(tr("http://www.arduino.cc/")));
+    item.addActionListener(event -> Base.openURL("https://www.arduino.cc/"));
     menu.add(item);
 
     // macosx already has its own about menu
@@ -2587,12 +2584,7 @@ public class Editor extends JFrame implements RunnerListener {
   // . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
   protected void onBoardOrPortChange() {
-    TargetBoard board = BaseNoGui.getTargetBoard();
-    if (board != null)
-      lineStatus.setBoardName(board.getName());
-    else
-      lineStatus.setBoardName("-");
-    lineStatus.setPort(PreferencesData.get("serial.port"));
+    lineStatus.updateBoardAndPort();
     lineStatus.repaint();
   }
 

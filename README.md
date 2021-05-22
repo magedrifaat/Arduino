@@ -9,6 +9,8 @@ can be connected to software on your computer (e.g. Flash, Processing and MaxMSP
 The boards can be assembled by hand or purchased preassembled; the open-source
 IDE can be downloaded for free at [https://arduino.cc](https://www.arduino.cc/en/Main/Software)
 
+![Github](https://img.shields.io/github/v/release/arduino/Arduino)
+
 ## More info at
 
 -  [Our website](https://www.arduino.cc/)
@@ -32,12 +34,20 @@ suggest discussing your ideas on the
 That way you can coordinate with the Arduino Team and others,
 giving your work a higher chance of being integrated into the official release
 
+### Security
+
+If you think you found a vulnerability or other security-related bug in this project, please read our
+[security policy](https://github.com/arduino/Arduino/security/policy) and report the bug to our Security Team 🛡️
+Thank you!
+
+e-mail contact: security@arduino.cc
+
 ## Installation
 
 Detailed instructions for installation in popular operating systems can be found at:
 
 -  [Linux](https://www.arduino.cc/en/Guide/Linux) (see also the [Arduino playground](https://playground.arduino.cc/Learning/Linux))
--  [macOS](https://www.arduino.cc/en/Guide/MacOSX)
+-  [macOS](https://www.arduino.cc/en/Guide/macOS)
 -  [Windows](https://www.arduino.cc/en/Guide/Windows)
 
 ## Contents of this repository
